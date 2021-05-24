@@ -6,12 +6,15 @@ import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
-  declarations: [
-    SidebarComponent,
-    HeaderComponent
-  ],
-  imports: [
-    CommonModule
-  ]
+    declarations: [
+        SidebarComponent,
+        HeaderComponent
+    ],
+    exports: [
+        SidebarComponent
+    ],
+    imports: [
+        CommonModule
+    ]
 })
 export class CoreModule { }

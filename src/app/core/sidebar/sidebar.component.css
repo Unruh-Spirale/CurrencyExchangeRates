@@ -1,0 +1,21 @@
+.sidebar{
+  background-color: gainsboro;
+  width: 180px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  top: 150px;
+}
+ul{
+  margin-top: 0;
+  padding-left: 0;
+  list-style: none;
+  text-transform: uppercase;
+}
+li{
+  padding: 15px;
+}
+li:hover{
+  background-color: grey;
+  color: white;
+}
