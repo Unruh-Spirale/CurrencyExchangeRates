@@ -14,6 +14,7 @@ ul{
 }
 li{
   padding: 15px;
+  cursor: pointer;
 }
 li:hover{
   background-color: grey;
