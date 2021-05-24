@@ -7,15 +7,13 @@ import { GbpComponent } from './gbp/gbp.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {CurrencyRoutingModule} from "./currency-routing.module";
 
-
-
 @NgModule({
   declarations: [
     EurComponent,
     UsdComponent,
     ChfComponent,
     GbpComponent,
-    DashboardComponent
+    DashboardComponent,
   ],
   imports: [
     CommonModule,
