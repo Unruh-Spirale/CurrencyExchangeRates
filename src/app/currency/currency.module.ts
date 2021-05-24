@@ -18,6 +18,7 @@ import {CurrencyRoutingModule} from "./currency-routing.module";
   imports: [
     CommonModule,
     CurrencyRoutingModule
-  ]
+  ],
+  exports: [DashboardComponent]
 })
 export class CurrencyModule { }
