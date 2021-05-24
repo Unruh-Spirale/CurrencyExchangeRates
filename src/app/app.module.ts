@@ -5,6 +5,9 @@ import { AppComponent } from './app.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {CoreModule} from "./core/core.module";
+import {RouterModule} from "@angular/router";
+import {AppRoutingModule} from "./app-routing.module";
+import {CurrencyRoutingModule} from "./currency/currency-routing.module";
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import {CoreModule} from "./core/core.module";
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    CoreModule
+    CoreModule,
+    RouterModule,
+    AppRoutingModule,
+    CurrencyRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

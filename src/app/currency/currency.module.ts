@@ -5,6 +5,7 @@ import { UsdComponent } from './usd/usd.component';
 import { ChfComponent } from './chf/chf.component';
 import { GbpComponent } from './gbp/gbp.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import {CurrencyRoutingModule} from "./currency-routing.module";
 
 
 
@@ -17,7 +18,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     DashboardComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    CurrencyRoutingModule
   ]
 })
 export class CurrencyModule { }
