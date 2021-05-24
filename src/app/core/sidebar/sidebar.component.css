@@ -16,6 +16,9 @@ li{
   padding: 15px;
   cursor: pointer;
 }
+li.active{
+  background-color: darkgrey;
+}
 li:hover{
   background-color: grey;
   color: white;
