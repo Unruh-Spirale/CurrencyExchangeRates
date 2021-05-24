@@ -10,9 +10,10 @@ import { HeaderComponent } from './header/header.component';
         SidebarComponent,
         HeaderComponent
     ],
-    exports: [
-        SidebarComponent
-    ],
+  exports: [
+    SidebarComponent,
+    HeaderComponent
+  ],
     imports: [
         CommonModule
     ]

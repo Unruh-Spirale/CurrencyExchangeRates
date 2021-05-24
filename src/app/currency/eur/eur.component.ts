@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EurComponent implements OnInit {
 
+  title = 'EUR';
+
   constructor() { }
 
   ngOnInit(): void {

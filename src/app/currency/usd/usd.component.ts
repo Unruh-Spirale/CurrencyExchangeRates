@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsdComponent implements OnInit {
 
+  title = 'USD';
+
   constructor() { }
 
   ngOnInit(): void {

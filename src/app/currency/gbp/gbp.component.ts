@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GbpComponent implements OnInit {
 
+  title = 'GBP';
+
   constructor() { }
 
   ngOnInit(): void {

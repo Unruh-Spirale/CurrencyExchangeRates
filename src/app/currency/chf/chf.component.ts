@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChfComponent implements OnInit {
 
+  title = 'CHF';
+
   constructor() { }
 
   ngOnInit(): void {
