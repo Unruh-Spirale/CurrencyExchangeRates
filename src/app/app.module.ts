@@ -8,6 +8,7 @@ import {CoreModule} from "./core/core.module";
 import {RouterModule} from "@angular/router";
 import {AppRoutingModule} from "./app-routing.module";
 import {CurrencyRoutingModule} from "./currency/currency-routing.module";
+import {CurrencyModule} from "./currency/currency.module";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {CurrencyRoutingModule} from "./currency/currency-routing.module";
     CoreModule,
     RouterModule,
     AppRoutingModule,
-    CurrencyRoutingModule
+    CurrencyRoutingModule,
+    CurrencyModule
   ],
   providers: [],
   bootstrap: [AppComponent]
