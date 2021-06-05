@@ -3,4 +3,48 @@
     <p>{{title}}</p>
   </div>
 </app-header>
-<p>eur works!</p>
+
+<div>
+
+  <table *ngIf="eur" class="table">
+    <thead class="table">
+    <tr>
+      <td>Kurs kupna</td>
+      <td>Kurs sprzedaży</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="text-bold">
+      <td>{{eur.rates[0].ask}}</td>
+      <td>{{eur.rates[0].bid}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p>Currencies</p>
+  <table class="table">
+    <thead>
+    <tr *ngFor="let nbp of nbps">
+      <td>{{nbp.table}}</td>
+      <td>{{nbp.no}}</td>
+      <td>{{nbp.tradingDate}}</td>
+      <td>{{nbp.effectiveDate}}</td>
+    </tr>
+    <tr *ngFor="let curr of rates">
+      <td>{{curr.currency}}</td>
+      <td>{{curr.code}}</td>
+      <td>{{curr.bid}}</td>
+      <td>{{curr.ask}}</td>
+    </tr>
+<!--    <tr>-->
+<!--      <td>{{eur.table}}</td>-->
+<!--      <td>{{eur.code}}</td>-->
+<!--      <td>{{eur.currency}}</td>-->
+<!--      <td>{{eur.rates}}</td>-->
+<!--    </tr>-->
+    </thead>
+  </table>
+
+  <p>Kurs kupna</p>
+
+</div>

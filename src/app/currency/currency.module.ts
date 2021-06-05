@@ -7,6 +7,7 @@ import { GbpComponent } from './gbp/gbp.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {CurrencyRoutingModule} from "./currency-routing.module";
 import {SharedModule} from "../shared/shared.module";
+import {HighchartsChartModule} from "highcharts-angular";
 
 @NgModule({
   declarations: [
@@ -16,11 +17,13 @@ import {SharedModule} from "../shared/shared.module";
     ChfComponent,
     GbpComponent
   ],
-  imports: [
-    SharedModule,
-    CommonModule,
-    CurrencyRoutingModule,
-  ],
-  exports: [DashboardComponent]
+    imports: [
+        SharedModule,
+        CommonModule,
+        CurrencyRoutingModule,
+        HighchartsChartModule,
+    ],
+  exports: [DashboardComponent],
+  providers: []
 })
 export class CurrencyModule { }

@@ -1,34 +1,38 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {CurrencyExchangerate} from "./model/currency-exchangerate";
+import {Nbp} from "./model/nbp";
+import {Rate} from "./model/rate";
+import {Table} from "./model/table";
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class CurrencyService {
 
-  private currencyTableC = 'http://api.nbp.pl/api/exchangerates/rates/c/';
-  private eur = this.currencyTableC + 'eur/?format=json';
-  private usd = this.currencyTableC + 'usd/?format=json';
-  private chf = this.currencyTableC + 'chf/?format=json';
-  private gbp = this.currencyTableC + 'gbp/?format=json';
+  private nbpUrl = 'http://api.nbp.pl/api/exchangerates/tables/c/?format=json';
+  private eurUrl = 'http://api.nbp.pl/api/exchangerates/rates/c/eur/?format=json';
+  private usdUrl = 'http://api.nbp.pl/api/exchangerates/rates/c/usd/?format=json';
+  private chfUrl = 'http://api.nbp.pl/api/exchangerates/rates/c/chf/?format=json';
+  private gbpUrl = 'http://api.nbp.pl/api/exchangerates/rates/c/gbp/?format=json';
 
   constructor(private httpClient: HttpClient) { }
 
-  getCurrencyEur(): Observable<CurrencyExchangerate>{
-    return this.httpClient.get<CurrencyExchangerate>(this.eur);
+  public getNbp(): Observable<Nbp[]>{
+    return this.httpClient.get<Nbp[]>(this.nbpUrl);
+  }
+  public getEur(): Observable<Table>{
+    return this.httpClient.get<Table>(this.eurUrl);
+  }
+  public getUsd(): Observable<Table>{
+    return this.httpClient.get<Table>(this.usdUrl);
+  }
+  public getChf(): Observable<Table>{
+    return this.httpClient.get<Table>(this.chfUrl);
+  }
+  public getGbp(): Observable<Table>{
+    return this.httpClient.get<Table>(this.gbpUrl);
   }
 
-  getCurrencyUsd(): Observable<CurrencyExchangerate>{
-    return this.httpClient.get<CurrencyExchangerate>(this.usd);
-  }
-
-  getCurrencyChf(): Observable<CurrencyExchangerate>{
-    return this.httpClient.get<CurrencyExchangerate>(this.chf);
-  }
-
-  getCurrencyGbp(): Observable<CurrencyExchangerate>{
-    return this.httpClient.get<CurrencyExchangerate>(this.gbp);
-  }
 }

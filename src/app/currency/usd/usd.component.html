@@ -1,6 +1,42 @@
 <app-header>
   <div title>
-    <p>{{title}}</p>
+    <p>{{usd?.code}}/PLN</p>
   </div>
 </app-header>
-<p>usd works!</p>
+
+<div class="data-container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="prices">
+        <table *ngIf="usd" class="table table-striped text-center">
+          <thead>
+          <tr>
+            <td>Buy</td>
+            <td>Sell</td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr class="text-bold">
+            <td>{{usd.rates[0].ask}}</td>
+            <td>{{usd.rates[0].bid}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="exchange">
+        <form class="">
+            <input type="number" id="dolar"><span> {{usd?.code}} </span>
+            <input type="number"><span> PLN </span>
+        </form>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <highcharts-chart
+        [Highcharts]="Highcharts"
+        [options]="chartOptions"
+
+        style="width: 100%; height: 400px; display: block;"
+      ></highcharts-chart>
+    </div>
+  </div>
+</div>
