@@ -17,9 +17,9 @@ export class UsdComponent implements OnInit {
   usd: Table;
   usdMid: Table;
   midRates: Currency[];
-  rateScope: number = 0;
-  usd90: number[];
+  rateScope: number = 2;
   days: number = 30;
+  usd90: number[];
 
   usdToPln: number;
   plnToUsd: number;
@@ -35,7 +35,7 @@ export class UsdComponent implements OnInit {
       type: 'spline'
     },
     title: {
-      text: 'Average currency rate for '+this.days
+      text: 'Average USD rate'
     },
     xAxis: {
       categories: []
@@ -66,6 +66,10 @@ export class UsdComponent implements OnInit {
     this.usd90 = this.midRates.map((x) => x.mid);
   }
   loadDataToCharts(): void{
+    // this.chartOptions.title?.text:({text: 'Average currency rate for ' + this.days});
+    // 'Average currency rate for ' + this.days
+    // this.Highcharts.chart('highcharts',this.chartOptions).title.update({text: 'Average currency rate for ' + this.days});
+
     this.chartOptions.xAxis = [
       {
         categories: this.getDatesOfRate()
@@ -76,34 +80,39 @@ export class UsdComponent implements OnInit {
         name: 'USD',
         data: this.getNumbersOfRates(),
         type: 'line'
-      }
+       }
     ];
   }
 
   changeRateScope(scope: number): void{
     this.rateScope = scope;
-    // window.location.reload();
+    this.getNumbersOfRates();
+    this.getDatesOfRate();
+    this.loadDataToCharts();
+    this.Highcharts.chart('highcharts',this.chartOptions).update(this.chartOptions);
+    this.Highcharts.chart('highcharts',this.chartOptions).redraw();
   }
 
 
   getNumbersOfRates(): number[]{
     if(this.rateScope == 1){
+      this.days = 60;
       return this.usd90.slice(this.usd90.length-61, this.usd90.length);
     }
     if(this.rateScope == 2){
+      this.days = 90;
       return this.usd90;
     }
+    this.days = 30;
     return this.usd90.slice(this.usd90.length-31,this.usd90.length);
   }
 
 
   getDatesOfRate(): string[]{
     if(this.rateScope == 1){
-      this.days = 60;
       return this.midRates.map(x => x.effectiveDate).slice(this.midRates.length-61, this.midRates.length);
     }
     if(this.rateScope == 2){
-      this.days = 90;
       return this.midRates.map(x => x.effectiveDate);
     }
     return this.midRates.map((x) => x.effectiveDate).slice(this.midRates.length-31, this.midRates.length);
