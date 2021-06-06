@@ -17,6 +17,9 @@ export class CurrencyUsdService{
   public getUsd(): Observable<Table>{
     return this.httpClient.get<Table>(this.usdUrl);
   }
+  // public getUsd30(id: string): Observable<Table>{
+  //   return this.httpClient.get<Table>(this.usd30Url);
+  // }
   public getUsd30(): Observable<Table>{
     return this.httpClient.get<Table>(this.usd30Url);
   }

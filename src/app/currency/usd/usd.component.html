@@ -4,6 +4,8 @@
   </div>
 </app-header>
 
+<p>{{rateScope}}</p>
+
 <div class="data-container">
   <div class="row">
     <div class="col-sm-6">
@@ -24,9 +26,24 @@
         </table>
       </div>
       <div class="exchange">
-        <form class="">
-            <input type="number" id="dolar"><span> {{usd?.code}} </span>
-            <input type="number"><span> PLN </span>
+        <form>
+          <div class="form-row">
+
+            <div class="input-group col-sm-6">
+              <input (keyup)="convertUsdToPln($event)" value="{{plnToUsd | number: '1.0-2'}}" class="form-control">
+              <div class="input-group-append">
+                <div class="input-group-text text-bold"> {{usd.code}}</div>
+              </div>
+            </div>
+
+            <div class="input-group col-sm-6">
+              <input (keyup)="convertPlnToUsd($event)" value="{{usdToPln | number: '1.0-2'}}" class="form-control">
+              <div class="input-group-append">
+                <div class="input-group-text text-bold">PLN</div>
+              </div>
+            </div>
+
+          </div>
         </form>
       </div>
     </div>
@@ -37,6 +54,17 @@
 
         style="width: 100%; height: 400px; display: block;"
       ></highcharts-chart>
+      <div class="row">
+        <div class="col-sm-4">
+            <button type="button" class="btn btn-secondary btn-block" (click)="changeRateScope(0)">30 days</button>
+        </div>
+        <div class="col-sm-4">
+          <button type="button" class="btn btn-secondary btn-block" (click)="changeRateScope(1)">60 days</button>
+        </div>
+        <div class="col-sm-4">
+          <button type="button" class="btn btn-secondary btn-block" (click)="changeRateScope(2)">90 days</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>

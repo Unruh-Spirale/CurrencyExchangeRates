@@ -4,13 +4,14 @@ import {EurComponent} from "./eur/eur.component";
 import {UsdComponent} from "./usd/usd.component";
 import {ChfComponent} from "./chf/chf.component";
 import {GbpComponent} from "./gbp/gbp.component";
+import {CurrencyResolveService} from "./currency-resolve.service";
 
 const CURRENCY_ROUTES: Route[] = [
   {
     path: 'eur', component: EurComponent
   },
   {
-    path: 'usd', component: UsdComponent
+    path: 'usd', component: UsdComponent, resolve: { usdMid: CurrencyResolveService}
   },
   {
     path: 'chf', component: ChfComponent
@@ -22,7 +23,7 @@ const CURRENCY_ROUTES: Route[] = [
 
 @NgModule({
   imports: [RouterModule.forChild(CURRENCY_ROUTES)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 
 export class CurrencyRoutingModule { }

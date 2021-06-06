@@ -8,6 +8,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import {CurrencyRoutingModule} from "./currency-routing.module";
 import {SharedModule} from "../shared/shared.module";
 import {HighchartsChartModule} from "highcharts-angular";
+import {CurrencyResolveService} from "./currency-resolve.service";
 
 @NgModule({
   declarations: [
@@ -24,6 +25,6 @@ import {HighchartsChartModule} from "highcharts-angular";
         HighchartsChartModule,
     ],
   exports: [DashboardComponent],
-  providers: []
+  providers: [CurrencyResolveService]
 })
 export class CurrencyModule { }
