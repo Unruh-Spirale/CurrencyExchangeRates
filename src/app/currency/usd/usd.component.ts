@@ -17,7 +17,7 @@ export class UsdComponent implements OnInit {
   usd: Table;
   usdMid: Table;
   midRates: Currency[];
-  rateScope: number = 2;
+  rateScope: number = 0;
   days: number = 30;
   usd90: number[];
 
@@ -35,7 +35,7 @@ export class UsdComponent implements OnInit {
       type: 'spline'
     },
     title: {
-      text: 'Average USD rate'
+      text: 'Average USD rates'
     },
     xAxis: {
       categories: []
@@ -89,7 +89,7 @@ export class UsdComponent implements OnInit {
     this.getNumbersOfRates();
     this.getDatesOfRate();
     this.loadDataToCharts();
-    this.Highcharts.chart('highcharts',this.chartOptions).update(this.chartOptions);
+    // this.Highcharts.chart('highcharts',this.chartOptions).update(this.chartOptions);
     this.Highcharts.chart('highcharts',this.chartOptions).redraw();
   }
 
@@ -119,11 +119,11 @@ export class UsdComponent implements OnInit {
   }
 
   convertUsdToPln(event: any){
-    this.usdToPln = (event.target.value * this.usd.rates[0].ask);
+    this.usdToPln = (event.target.value * this.usd.rates[0].bid);
   }
 
   convertPlnToUsd(event: any){
-    this.plnToUsd = event.target.value / this.usd.rates[0].bid;
+    this.plnToUsd = event.target.value / this.usd.rates[0].ask;
   }
 
 

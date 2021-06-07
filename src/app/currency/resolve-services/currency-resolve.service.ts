@@ -1,6 +1,6 @@
 import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from "@angular/router";
-import {Table} from "./model/table";
-import {CurrencyUsdService} from "./currency-usd.service";
+import {Table} from "../model/table";
+import {CurrencyUsdService} from "../currency-usd.service";
 import {Observable} from "rxjs";
 import {Injectable} from "@angular/core";
 

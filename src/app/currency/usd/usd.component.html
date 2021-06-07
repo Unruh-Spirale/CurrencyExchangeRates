@@ -1,6 +1,6 @@
 <app-header>
   <div title>
-    <p>{{usd?.code}}/PLN</p>
+    <p>{{usdMid.code}}/PLN</p>
   </div>
 </app-header>
 
@@ -23,6 +23,7 @@
           </tbody>
         </table>
       </div>
+
       <div class="exchange">
         <form>
           <div class="form-row">
@@ -30,7 +31,7 @@
             <div class="input-group col-sm-6">
               <input (keyup)="convertUsdToPln($event)" value="{{plnToUsd | number: '1.0-2'}}" class="form-control">
               <div class="input-group-append">
-                <div class="input-group-text text-bold"> {{usd.code}}</div>
+                <div class="input-group-text text-bold"> {{usd?.code}}</div>
               </div>
             </div>
 
@@ -45,6 +46,8 @@
         </form>
       </div>
     </div>
+
+
     <div class="col-sm-6">
       <div id="highcharts">
         <highcharts-chart
@@ -55,6 +58,7 @@
         ></highcharts-chart>
       </div>
       <div class="row">
+
         <div class="col-sm-4">
             <button id="chart30" type="button" class="btn btn-secondary btn-block" (click)="changeRateScope(0)">30 days</button>
         </div>
@@ -64,7 +68,9 @@
         <div class="col-sm-4">
           <button id="chart90" type="button" class="btn btn-secondary btn-block" (click)="changeRateScope(2)">90 days</button>
         </div>
+
       </div>
     </div>
+
   </div>
 </div>

@@ -1,9 +1,77 @@
 <app-header>
   <div title>
-    <p>{{title}}</p>
+    <p>{{chfMid.code}}/PLN</p>
   </div>
 </app-header>
-<div class="content-wrapper">
-  <p>chf works!</p>
+
+<div class="data-container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="prices">
+        <table *ngIf="chf" class="table table-striped text-center">
+          <thead>
+          <tr>
+            <td>Buy</td>
+            <td>Sell</td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr class="text-bold">
+            <td>{{chf.rates[0].ask}}</td>
+            <td>{{chf.rates[0].bid}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="exchange">
+        <form>
+          <div class="form-row">
+
+            <div class="input-group col-sm-6">
+              <input (keyup)="convertChfToPln($event)" value="{{plnToChf | number: '1.0-2'}}" class="form-control">
+              <div class="input-group-append">
+                <div class="input-group-text text-bold">{{chf?.code}}</div>
+              </div>
+            </div>
+
+            <div class="input-group col-sm-6">
+              <input (keyup)="convertPlnToChf($event)" value="{{chfToPln | number: '1.0-2'}}" class="form-control">
+              <div class="input-group-append">
+                <div class="input-group-text text-bold">PLN</div>
+              </div>
+            </div>
+
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+    <div class="col-sm-6">
+      <div id="highcharts">
+        <highcharts-chart
+          [Highcharts] = "Highcharts"
+          [options] = "chartOptions"
+
+          style = "width: 100%; height: 400px; display: block "
+          ></highcharts-chart>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4">
+          <button class="btn btn-secondary btn-block" (click)="changeRateScope(0)">30 days</button>
+        </div>
+        <div class="col-sm-4">
+          <button class="btn btn-secondary btn-block" (click)="changeRateScope(1)">60 days</button>
+        </div>
+        <div class="col-sm-4">
+          <button class="btn btn-secondary btn-block" (click)="changeRateScope(2)">90 days</button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
 </div>
 
