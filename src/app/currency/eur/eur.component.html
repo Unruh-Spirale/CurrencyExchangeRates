@@ -1,50 +1,88 @@
 <app-header>
   <div title>
-    <p>{{title}}</p>
+    <p>{{eurMid.code}}/PLN</p>
   </div>
 </app-header>
 
-<div>
+<div class="data-container">
+  <div class="row">
 
-  <table *ngIf="eur" class="table">
-    <thead class="table">
-    <tr>
-      <td>Kurs kupna</td>
-      <td>Kurs sprzedaży</td>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="text-bold">
-      <td>{{eur.rates[0].ask}}</td>
-      <td>{{eur.rates[0].bid}}</td>
-    </tr>
-    </tbody>
-  </table>
+    <div class="col-sm-6">
 
-  <p>Currencies</p>
-  <table class="table">
-    <thead>
-    <tr *ngFor="let nbp of nbps">
-      <td>{{nbp.table}}</td>
-      <td>{{nbp.no}}</td>
-      <td>{{nbp.tradingDate}}</td>
-      <td>{{nbp.effectiveDate}}</td>
-    </tr>
-    <tr *ngFor="let curr of rates">
-      <td>{{curr.currency}}</td>
-      <td>{{curr.code}}</td>
-      <td>{{curr.bid}}</td>
-      <td>{{curr.ask}}</td>
-    </tr>
-<!--    <tr>-->
-<!--      <td>{{eur.table}}</td>-->
-<!--      <td>{{eur.code}}</td>-->
-<!--      <td>{{eur.currency}}</td>-->
-<!--      <td>{{eur.rates}}</td>-->
-<!--    </tr>-->
-    </thead>
-  </table>
+      <div class="prices">
+        <table *ngIf="eur" class="table table-striped text-center">
+          <thead>
+          <tr>
+            <td>Buy</td>
+            <td>Sell</td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr class="text-bold">
+            <td>{{eur.rates[0].ask}}</td>
+            <td>{{eur.rates[0].bid}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
 
-  <p>Kurs kupna</p>
+      <div class="exchange">
+        <form>
+
+          <div class="form-row">
+
+            <div class="input-group col-sm-6">
+              <input (keyup)="convertEurToPln($event)" value="{{plnToEur | number: '1.0-2'}}" class="form-control">
+              <div class="input-group-append">
+                <div class="input-group-text text-bold">asd</div>
+              </div>
+            </div>
+
+            <div class="input-group col-sm-6">
+              <input (keyup)="convertPlnToEur($event)" value="{{eurToPln | number: '1.0-2'}}" class="form-control">
+              <div class="input-group-append">
+                <div class="input-group-text text-bold">asd</div>
+              </div>
+            </div>
+
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+
+    <div class="col-sm-6">
+      <div id="highcharts">
+        <highcharts-chart
+          [Highcharts] = "Highcharts"
+          [options] = "chartOptions"
+
+          style = "width: 100%; height: 400px; display: block;"
+          ></highcharts-chart>
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-4">
+          <button class="btn btn-secondary btn-block" (click)="changeRateScope(0)">30 days</button>
+        </div>
+        <div class="col-sm-4">
+          <button class="btn btn-secondary btn-block" (click)="changeRateScope(1)">60 days</button>
+        </div>
+        <div class="col-sm-4">
+          <button class="btn btn-secondary btn-block" (click)="changeRateScope(2)">90 days</button>
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+
+
 
 </div>

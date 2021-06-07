@@ -13,6 +13,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {CurrencyUsdService} from "./currency/currency-usd.service";
 import {CurrencyChfService} from "./currency/services-currency-rates/currency-chf.service";
 import {CurrencyGbpService} from "./currency/services-currency-rates/currency-gbp.service";
+import {CurrencyEurService} from "./currency/services-currency-rates/currency-eur.service";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import {CurrencyGbpService} from "./currency/services-currency-rates/currency-gb
     CurrencyRoutingModule,
     CurrencyModule
   ],
-  providers: [CurrencyService, CurrencyUsdService, CurrencyChfService, CurrencyGbpService],
+  providers: [CurrencyService, CurrencyUsdService, CurrencyChfService, CurrencyGbpService, CurrencyEurService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

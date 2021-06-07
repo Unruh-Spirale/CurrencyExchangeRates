@@ -11,6 +11,7 @@ import {HighchartsChartModule} from "highcharts-angular";
 import {CurrencyResolveService} from "./resolve-services/currency-resolve.service";
 import {CurrencyResolveChfService} from "./resolve-services/currency-resolve-chf.service";
 import {CurrencyResolveGbpService} from "./resolve-services/currency-resolve-gbp.service";
+import {CurrencyResolveEurService} from "./resolve-services/currency-resolve-eur.service";
 // import {CurrencyResolveService} from "./resolve-services/currency-resolve.service";
 
 @NgModule({
@@ -28,6 +29,11 @@ import {CurrencyResolveGbpService} from "./resolve-services/currency-resolve-gbp
         HighchartsChartModule,
     ],
   exports: [DashboardComponent],
-  providers: [CurrencyResolveService, CurrencyResolveChfService, CurrencyResolveGbpService]
+  providers: [
+    CurrencyResolveService,
+    CurrencyResolveChfService,
+    CurrencyResolveGbpService,
+    CurrencyResolveEurService
+  ]
 })
 export class CurrencyModule { }
