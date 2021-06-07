@@ -74,7 +74,8 @@ export class GbpComponent implements OnInit {
       {
         name: 'GBP',
         data: this.getNumersOfRates(),
-        type: 'line'
+        type: 'line',
+        color: 'blue'
       }
     ];
   }

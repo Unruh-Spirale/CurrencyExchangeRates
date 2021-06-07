@@ -75,7 +75,8 @@ export class ChfComponent implements OnInit {
       {
         name: 'CHF',
         data: this.getNumbersOfRates(),
-        type: 'line'
+        type: 'line',
+        color: 'red'
       }
     ]
   }

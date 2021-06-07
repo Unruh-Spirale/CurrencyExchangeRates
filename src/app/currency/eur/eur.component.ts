@@ -76,7 +76,8 @@ export class EurComponent implements OnInit {
       {
         name: 'EUR',
         data: this.getNumbersOfRates(),
-        type: 'line'
+        type: 'line',
+        color: 'gold'
       }
     ]
   }

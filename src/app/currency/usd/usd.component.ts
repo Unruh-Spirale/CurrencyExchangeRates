@@ -79,7 +79,8 @@ export class UsdComponent implements OnInit {
       {
         name: 'USD',
         data: this.getNumbersOfRates(),
-        type: 'line'
+        type: 'line',
+        color: 'green'
        }
     ];
   }
