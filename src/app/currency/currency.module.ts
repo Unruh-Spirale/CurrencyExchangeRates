@@ -10,6 +10,7 @@ import {SharedModule} from "../shared/shared.module";
 import {HighchartsChartModule} from "highcharts-angular";
 import {CurrencyResolveService} from "./resolve-services/currency-resolve.service";
 import {CurrencyResolveChfService} from "./resolve-services/currency-resolve-chf.service";
+import {CurrencyResolveGbpService} from "./resolve-services/currency-resolve-gbp.service";
 // import {CurrencyResolveService} from "./resolve-services/currency-resolve.service";
 
 @NgModule({
@@ -27,6 +28,6 @@ import {CurrencyResolveChfService} from "./resolve-services/currency-resolve-chf
         HighchartsChartModule,
     ],
   exports: [DashboardComponent],
-  providers: [CurrencyResolveService, CurrencyResolveChfService]
+  providers: [CurrencyResolveService, CurrencyResolveChfService, CurrencyResolveGbpService]
 })
 export class CurrencyModule { }
