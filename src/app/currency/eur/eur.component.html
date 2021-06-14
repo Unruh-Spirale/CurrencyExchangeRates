@@ -34,14 +34,14 @@
             <div class="input-group col-sm-6">
               <input (keyup)="convertEurToPln($event)" value="{{plnToEur | number: '1.0-2'}}" class="form-control">
               <div class="input-group-append">
-                <div class="input-group-text text-bold">asd</div>
+                <div class="input-group-text text-bold">{{eurMid.code}}</div>
               </div>
             </div>
 
             <div class="input-group col-sm-6">
               <input (keyup)="convertPlnToEur($event)" value="{{eurToPln | number: '1.0-2'}}" class="form-control">
               <div class="input-group-append">
-                <div class="input-group-text text-bold">asd</div>
+                <div class="input-group-text text-bold">PLN</div>
               </div>
             </div>
 

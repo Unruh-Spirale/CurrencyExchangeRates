@@ -6,8 +6,12 @@
   left: 0;
   top: 0;
 }
+.logo{
+  width: 180px;
+  height: 180px;
+}
 ul{
-  margin-top: 150px;
+  /*margin-top: 150px;*/
   padding-left: 0;
   list-style: none;
   text-transform: uppercase;
@@ -22,4 +26,16 @@ li.active{
 li:hover{
   background-color: grey;
   color: white;
+}
+
+.footer{
+  width: 180px;
+  position: fixed;
+  bottom: 0;
+}
+
+.author{
+  text-decoration: none;
+  color: gray;
+  font-size: 11px;
 }

@@ -4,5 +4,28 @@
   </div>
 </app-header>
 <div class="content-wrapepr">
-  <p>Welcome to currency exchange office</p>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="content">
+        <p>
+          Welcome to currency exchange office. The rates of currencies are download from NBP
+          (National Polish Bank). There are four main currencies like euro, dollar, Swiss franc
+          and pound sterling in exchange currency office. User can observe currencies rates
+          from past or calculate exchange to or from zloty by currently currencies rates.
+        </p>
+      </div>
+
+    </div>
+    <div class="col-sm-6">
+      <div id="highcharts">
+        <highcharts-chart
+          [Highcharts] = "Highcharts"
+          [options] = "chartOptions"
+
+          style = "width: 100%; height: 400px; display: block"
+          ></highcharts-chart>
+      </div>
+    </div>
+  </div>
+
 </div>
