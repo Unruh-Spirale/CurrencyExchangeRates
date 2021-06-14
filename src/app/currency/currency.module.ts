@@ -8,11 +8,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import {CurrencyRoutingModule} from "./currency-routing.module";
 import {SharedModule} from "../shared/shared.module";
 import {HighchartsChartModule} from "highcharts-angular";
-import {CurrencyResolveService} from "./resolve-services/currency-resolve.service";
 import {CurrencyResolveChfService} from "./resolve-services/currency-resolve-chf.service";
 import {CurrencyResolveGbpService} from "./resolve-services/currency-resolve-gbp.service";
 import {CurrencyResolveEurService} from "./resolve-services/currency-resolve-eur.service";
-// import {CurrencyResolveService} from "./resolve-services/currency-resolve.service";
+import {CurrencyResolveUsdService} from "./resolve-services/currency-resolve-usd.service";
 
 @NgModule({
   declarations: [
@@ -30,7 +29,7 @@ import {CurrencyResolveEurService} from "./resolve-services/currency-resolve-eur
     ],
   exports: [DashboardComponent],
   providers: [
-    CurrencyResolveService,
+    CurrencyResolveUsdService,
     CurrencyResolveChfService,
     CurrencyResolveGbpService,
     CurrencyResolveEurService

@@ -1,6 +1,6 @@
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Table} from "./model/table";
+import {Table} from "../model/table";
 import {Injectable} from "@angular/core";
 
 @Injectable()

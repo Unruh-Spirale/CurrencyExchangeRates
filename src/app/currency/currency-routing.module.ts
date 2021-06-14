@@ -4,7 +4,7 @@ import {EurComponent} from "./eur/eur.component";
 import {UsdComponent} from "./usd/usd.component";
 import {ChfComponent} from "./chf/chf.component";
 import {GbpComponent} from "./gbp/gbp.component";
-import {CurrencyResolveService} from "./resolve-services/currency-resolve.service";
+import {CurrencyResolveUsdService} from "./resolve-services/currency-resolve-usd.service";
 import {CurrencyResolveChfService} from "./resolve-services/currency-resolve-chf.service";
 import {CurrencyResolveGbpService} from "./resolve-services/currency-resolve-gbp.service";
 import {CurrencyResolveEurService} from "./resolve-services/currency-resolve-eur.service";
@@ -14,7 +14,7 @@ const CURRENCY_ROUTES: Route[] = [
     path: 'eur', component: EurComponent, resolve: {eurMid: CurrencyResolveEurService}
   },
   {
-    path: 'usd', component: UsdComponent, resolve: { usdMid: CurrencyResolveService}
+    path: 'usd', component: UsdComponent, resolve: { usdMid: CurrencyResolveUsdService}
   },
   {
     path: 'chf', component: ChfComponent, resolve: {chfMid: CurrencyResolveChfService}

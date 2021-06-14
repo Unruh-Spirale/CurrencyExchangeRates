@@ -1,11 +1,11 @@
 import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from "@angular/router";
 import {Table} from "../model/table";
-import {CurrencyUsdService} from "../currency-usd.service";
+import {CurrencyUsdService} from "../services-currency-rates/currency-usd.service";
 import {Observable} from "rxjs";
 import {Injectable} from "@angular/core";
 
 @Injectable()
-export class CurrencyResolveService implements Resolve<Table>{
+export class CurrencyResolveUsdService implements Resolve<Table>{
 
   constructor(private currencyUsdService: CurrencyUsdService) {
   }

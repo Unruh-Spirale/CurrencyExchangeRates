@@ -8,9 +8,8 @@ import {RouterModule} from "@angular/router";
 import {AppRoutingModule} from "./app-routing.module";
 import {CurrencyRoutingModule} from "./currency/currency-routing.module";
 import {CurrencyModule} from "./currency/currency.module";
-import {CurrencyService} from "./currency/currency.service";
 import {HttpClientModule} from "@angular/common/http";
-import {CurrencyUsdService} from "./currency/currency-usd.service";
+import {CurrencyUsdService} from "./currency/services-currency-rates/currency-usd.service";
 import {CurrencyChfService} from "./currency/services-currency-rates/currency-chf.service";
 import {CurrencyGbpService} from "./currency/services-currency-rates/currency-gbp.service";
 import {CurrencyEurService} from "./currency/services-currency-rates/currency-eur.service";
@@ -29,7 +28,12 @@ import {CurrencyEurService} from "./currency/services-currency-rates/currency-eu
     CurrencyRoutingModule,
     CurrencyModule
   ],
-  providers: [CurrencyService, CurrencyUsdService, CurrencyChfService, CurrencyGbpService, CurrencyEurService],
+  providers: [
+    CurrencyUsdService,
+    CurrencyChfService,
+    CurrencyGbpService,
+    CurrencyEurService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

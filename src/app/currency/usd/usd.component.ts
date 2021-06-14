@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Table} from "../model/table";
 
 import * as Highcharts from 'highcharts';
-import {CurrencyUsdService} from "../currency-usd.service";
+import {CurrencyUsdService} from "../services-currency-rates/currency-usd.service";
 import {ActivatedRoute} from "@angular/router";
 import {Currency} from "../model/currency";
 
