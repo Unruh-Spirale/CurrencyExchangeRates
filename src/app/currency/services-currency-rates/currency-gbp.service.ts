@@ -6,8 +6,8 @@ import {Table} from "../model/table";
 @Injectable()
 export class CurrencyGbpService{
 
-  private gbpUrl = 'http://api.nbp.pl/api/exchangerates/rates/c/gbp/?format=json';
-  private gbp90Url = 'http://api.nbp.pl/api/exchangerates/rates/a/gbp/last/90/?format=json';
+  private gbpUrl = 'https://api.nbp.pl/api/exchangerates/rates/c/gbp/?format=json';
+  private gbp90Url = 'https://api.nbp.pl/api/exchangerates/rates/a/gbp/last/90/?format=json';
 
   constructor(private httpClient: HttpClient) {
   }

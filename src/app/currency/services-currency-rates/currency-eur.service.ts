@@ -6,8 +6,8 @@ import {Table} from "../model/table";
 @Injectable()
 export class CurrencyEurService{
 
-  private eurUrl = 'http://api.nbp.pl/api/exchangerates/rates/c/eur/?format=json';
-  private eur90Url = 'http://api.nbp.pl/api/exchangerates/rates/a/eur/last/90/?format=json';
+  private eurUrl = 'https://api.nbp.pl/api/exchangerates/rates/c/eur/?format=json';
+  private eur90Url = 'https://api.nbp.pl/api/exchangerates/rates/a/eur/last/90/?format=json';
 
   constructor(private httpClient: HttpClient) {
   }

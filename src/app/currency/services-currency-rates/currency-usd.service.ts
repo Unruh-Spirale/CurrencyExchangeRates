@@ -6,8 +6,8 @@ import {Injectable} from "@angular/core";
 @Injectable()
 export class CurrencyUsdService{
 
-  private usdUrl = 'http://api.nbp.pl/api/exchangerates/rates/c/usd/?format=json';
-  private usd90Url = 'http://api.nbp.pl/api/exchangerates/rates/a/usd/last/90/?format=json';
+  private usdUrl = 'https://api.nbp.pl/api/exchangerates/rates/c/usd/?format=json';
+  private usd90Url = 'https://api.nbp.pl/api/exchangerates/rates/a/usd/last/90/?format=json';
 
   constructor(private httpClient: HttpClient) {
   }

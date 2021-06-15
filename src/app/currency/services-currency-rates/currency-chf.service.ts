@@ -6,8 +6,8 @@ import {Table} from "../model/table";
 @Injectable()
 export class CurrencyChfService{
 
-  private chfUrl = 'http://api.nbp.pl/api/exchangerates/rates/c/chf/?format=json';
-  private chf90Url = 'http://api.nbp.pl/api/exchangerates/rates/a/chf/last/90/?format=json';
+  private chfUrl = 'https://api.nbp.pl/api/exchangerates/rates/c/chf/?format=json';
+  private chf90Url = 'https://api.nbp.pl/api/exchangerates/rates/a/chf/last/90/?format=json';
 
   constructor(private httpClient: HttpClient) {
   }
